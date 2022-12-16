@@ -91,13 +91,3 @@ def print_available_function_by_list():
 
 # print_available_function()
 print_available_function_by_list()
-
-#
-# print("""wybierz rodzaj działania :
-#              1.dodawanie
-#              2.odejmowanie
-#              3.mnożenie
-#              4.dzielenie
-#              5.potęgowanie
-#              6.pierwiastkowanie
-#              7.wyłączeni""")

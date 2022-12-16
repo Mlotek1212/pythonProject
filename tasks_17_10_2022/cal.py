@@ -1,14 +1,10 @@
+from tasks_17_10_2022.show_info import print_available_function_by_list
+
+
 def get_type_of_calculation():
     is_ok = False
 
-    print("""wybierz rodzaj działania :
-             1.dodawanie
-             2.odejmowanie
-             3.mnożenie
-             4.dzielenie
-             5.potęgowanie
-             6.pierwiastkowanie
-             7.wyłączeni""")
+    print_available_function_by_list()
     while not is_ok:
         try:
             type_calculation = int(input())
@@ -158,7 +154,7 @@ def main3(first_number):
 
 
 if __name__ == "__main__":
-    main = main1
+    main = main3
     first_number = get_first_number()
     while True:
         first_number = main(first_number)
