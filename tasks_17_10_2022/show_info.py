@@ -53,8 +53,6 @@ def get_second_number():
             print("Podaj niepoprawną wartość")
 
 
-
-
 choose_type_calculation_function = {
     1: add_numbers,
     2: subtraction_numbers,
@@ -63,23 +61,33 @@ choose_type_calculation_function = {
     5: compounding_numbers,
     6: pierwiastkowanie,
 }
+
 choose_type_calculation_function_names = {
-    1: "1.suma",
-    2: "2.odejmowanie",
-    3: "3.mnożenie",
-    4: "4.dzielenie",
-    5: "5.potęgowanie",
-    6: "6.pierwiastkowanie",
+    1: "suma",
+    2: "odejmowanie",
+    3: "mnożenie",
+    4: "dzielenie",
+    5: "potęgowanie",
+    6: "pierwiastkowanie",
 }
 
-for litera in choose_type_calculation_function_names.values():
-    print(litera)
 
-print("""wybierz rodzaj działania :
-             1.dodawanie
-             2.odejmowanie
-             3.mnożenie
-             4.dzielenie
-             5.potęgowanie
-             6.pierwiastkowanie
-             7.wyłączeni""")
+def print_available_function():
+    result = "wybierz rodzaj działania :\n"
+
+    for number, action in choose_type_calculation_function_names.items():
+        result += f"{number}.{action}\n"
+    print(result)
+
+
+def print_available_function_by_list():
+    results = []
+    for number, action in choose_type_calculation_function_names.items():
+        results.append(f"{number}.{action}")
+    actions = '\n'.join(results)
+    result = f"wybierz rodzaj działania :\n{actions}"
+    print(result)
+
+
+# print_available_function()
+print_available_function_by_list()
