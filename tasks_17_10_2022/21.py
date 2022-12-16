@@ -64,12 +64,12 @@ choose_type_calculation_function = {
     6: pierwiastkowanie,
 }
 choose_type_calculation_function_names = {
-    1: "1.suma",
-    2: "2.odejmowanie",
-    3: "3.mnożenie",
-    4: "4.dzielenie",
-    5: "5.potęgowanie",
-    6: "6.pierwiastkowanie",
+    1: "suma",
+    2: "odejmowanie",
+    3: "mnożenie",
+    4: "dzielenie",
+    5: "potęgowanie",
+    6: "pierwiastkowanie",
 }
 
 for litera in choose_type_calculation_function_names.values():
