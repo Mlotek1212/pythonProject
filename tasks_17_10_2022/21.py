@@ -80,7 +80,17 @@ def print_available_function():
     print(result)
 
 
-print_available_function()
+def print_available_function_by_list():
+    results = []
+    for number, action in choose_type_calculation_function_names.items():
+        results.append(f"{number}.{action}")
+    actions = '\n'.join(results)
+    result = f"wybierz rodzaj działania :\n{actions}"
+    print(result)
+
+
+# print_available_function()
+print_available_function_by_list()
 
 #
 # print("""wybierz rodzaj działania :
