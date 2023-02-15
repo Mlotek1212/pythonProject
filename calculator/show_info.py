@@ -30,7 +30,7 @@ def pierwiastkowanie(first, second):
 
 
 def off(first, second):
-    raise NotImplemented("Wyłączenie kalkulatora")
+    raise NotImplementedError("Wyłączenie kalkulatora")
 
 
 def get_first_number():

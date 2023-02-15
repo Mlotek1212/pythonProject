@@ -1,4 +1,4 @@
-from tasks_17_10_2022.show_info import print_available_function_by_list
+from calculator.show_info import print_available_function_by_list
 
 
 def get_type_of_calculation():
