@@ -1,9 +1,14 @@
-from decimal import Decimal
 from unittest import mock
 
 from calculator.show_info import add_numbers, off, get_first_number, get_second_number, subtraction_numbers, \
     multiplication_numbers, sharing_numbers, compounding_numbers, pierwiastkowanie
 import pytest
+
+
+@pytest.fixture
+def m_input():
+    with mock.patch("calculator.show_info.input") as m_in:
+        yield m_in
 
 
 def test_add_numbers_only_integer():
@@ -39,12 +44,18 @@ def test_get_first_number():
         assert result == 1.0
 
 
-def test_get_second_number():
-    with mock.patch("calculator.show_info.input") as m_input:
-        m_input.return_value = "1"
-        result = get_second_number()
-        assert type(result) == float
-        assert result == 1.0
+def test_get_second_number(m_input):
+    m_input.return_value = "1"
+    result = get_second_number()
+    assert type(result) == float
+    assert result == 1.0
+
+
+def test_get_second_negative_number(m_input):
+    m_input.return_value = "-1.2"
+    result = get_second_number()
+    assert type(result) == float
+    assert result == -1.2
 
 
 def test_subtraction_numbers_only_integer():
@@ -89,8 +100,21 @@ def test_sharing_numbers_different_types():
     assert type(result) == float
 
 
-# def test_sharing_numbers_by_zero():
-#     result = sharing_numbers(4, 0)
+@pytest.mark.parametrize(
+    "first, second, excepted",
+    [
+        (4, 0, None),
+        (100, 0, None),
+        (8, 1, 8),
+        (8, 8, 1),
+        (8, 10, 0.8),
+        (0, 10, 0),
+        (-5, 2, -2.5),
+        (-5, -2, 2.5),
+    ]
+)
+def test_sharing_numbers(first, second, excepted):
+    assert sharing_numbers(first, second) == excepted
 
 
 def test_compounding_numbers():

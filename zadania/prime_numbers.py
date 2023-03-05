@@ -1,14 +1,14 @@
 def get_prime_number_from_range(range_from: int, range_to: int) -> list[int]:
     numbers = range(range_from, range_to + 1)
-    # results = []
-    # for number in numbers:
-    #     if number_of_divisors(number) == 2:
-    #         results.append(number)
-    #
-    #
-    # return results
+    results = []
+    for number in numbers:
+        if number_of_divisors(number) == 2:
+            results.append(number)
 
-    return [number for number in numbers if number_of_divisors(number) == 2]
+
+    return results
+
+    # return [number for number in numbers if number_of_divisors(number) == 2]
 
 
 def number_of_divisors(number: int) -> int:
