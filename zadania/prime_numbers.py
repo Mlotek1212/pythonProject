@@ -5,7 +5,6 @@ def get_prime_number_from_range(range_from: int, range_to: int) -> list[int]:
         if number_of_divisors(number) == 2:
             results.append(number)
 
-
     return results
 
     # return [number for number in numbers if number_of_divisors(number) == 2]
