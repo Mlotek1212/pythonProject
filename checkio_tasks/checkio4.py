@@ -16,6 +16,7 @@ def end_zeros(a: int) -> int:
 def end_zeros_new(a: int) -> int:
     for count, char in enumerate(str(a)[::-1]):
         if char != "0":
+
             return count
     return count + 1
 
