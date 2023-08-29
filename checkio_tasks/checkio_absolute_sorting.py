@@ -1,18 +1,20 @@
 
-def my_key(value):
-    if value < -10:
-        return abs(value)
-    if value < 11:
-        return value * 2
-    if value < 20:
-        return value *0.5
-    return abs(value)
+# this is few example of using key function usable by sorted
+# def my_key(value):
+#     if value < -10:
+#         return abs(value)
+#     if value < 11:
+#         return value * 2
+#     if value < 20:
+#         return value *0.5
+#     return abs(value)
 
 
 def checkio(values: list) -> list:
+    return sorted(values, key=abs)
+    # other solutions useful for learning
     # values.sort(key=abs)
     # return values
-    return sorted(values, key=abs)
     # return sorted(values, key=my_key)
     # return sorted(values, key=lambda value: value * 5 if value < 10 else abs(value))
 
